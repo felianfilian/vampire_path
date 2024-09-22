@@ -7,6 +7,21 @@
   src: url("../fonts/sofadi-one-v21-latin-regular.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
 }
 
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  margin: 0;
+  padding: 0;
+
+  text-align: center;
+}
+
+canvas {
+  background-color: rgb(184, 184, 184);
+}
+
 #main-container {
   background-color: rgb(61, 61, 61);
 }
