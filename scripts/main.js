@@ -2,13 +2,39 @@ const canvas = document.getElementById("main-canvas");
 const ctx = canvas.getContext("2d");
 
 const playerSprite = new Image();
-const vampLadySpritePath = "Idle1.png";
-playerSprite.src = vampLadySpritePath;
+const idlePath = "Idle1.png";
+playerSprite.src = idlePath;
 
-AniamteSprite();
+let player;
 
-function AniamteSprite() {
+class Player {
+  constructor() {
+    this.position = {
+      x: 100,
+      y: 100,
+    };
+    this.size = {
+      width: 64,
+      height: 80,
+    };
+  }
+}
+
+function main() {
+  player = new Player();
+  AnimateSprite();
+}
+
+function AnimateSprite() {
   ctx.clearRect(0, 0, canvas.width, canvas.height);
-  ctx.drawImage(playerSprite, 100, 100, 64, 80);
+  ctx.drawImage(
+    playerSprite,
+    player.position.x,
+    player.position.y,
+    player.size.width,
+    player.size.height
+  );
   requestAnimationFrame(AniamteSprite);
 }
+
+main();
