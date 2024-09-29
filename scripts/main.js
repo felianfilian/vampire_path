@@ -9,6 +9,6 @@ AniamteSprite();
 
 function AniamteSprite() {
   ctx.clearRect(0, 0, canvas.width, canvas.height);
-  ctx.drawImage(spriteSheet, 100, 100, 64, 80);
+  ctx.drawImage(playerSprite, 100, 100, 64, 80);
   requestAnimationFrame(AniamteSprite);
 }
