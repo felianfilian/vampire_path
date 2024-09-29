@@ -20,6 +20,10 @@ class Player {
   }
 }
 
+window.onload = function () {
+  main();
+};
+
 function main() {
   player = new Player();
   AnimateSprite();
@@ -36,5 +40,3 @@ function AnimateSprite() {
   );
   requestAnimationFrame(AniamteSprite);
 }
-
-main();
