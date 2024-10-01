@@ -23,6 +23,7 @@ class Player extends Drawable {
     this.size = {
       width: 64,
       height: 80,
+      scale: 1,
     };
     this.velocity = {
       x: 0,
@@ -33,10 +34,10 @@ class Player extends Drawable {
   draw() {
     this.drawImage(
       playerSprite,
-      player.position.x,
-      player.position.y,
-      player.size.width,
-      player.size.height
+      this.position.x,
+      this.position.y,
+      this.size.width * this.size.scale,
+      this.size.height * this.size.scale
     );
   }
 
@@ -47,13 +48,15 @@ class Player extends Drawable {
 
 function main() {
   player = new Player();
+  player.position.y = canvas.height - 200;
+  player.size.scale = 1.5;
   AnimateSprite();
 }
 
 function AnimateSprite() {
   ctx.clearRect(0, 0, canvas.width, canvas.height);
   player.draw();
-  requestAnimationFrame(() => this.AnimateSprite());
+  requestAnimationFrame(AnimateSprite);
 }
 
 main();
