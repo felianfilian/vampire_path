@@ -7,8 +7,15 @@ playerSprite.src = playerIdlePath;
 
 let player;
 
-class Player {
+class Drawable {
+  drawImage(sprite, posX, posY, width, height) {
+    ctx.drawImage(sprite, posX, posY, width, height);
+  }
+}
+
+class Player extends Drawable {
   constructor() {
+    super();
     this.position = {
       x: 100,
       y: 100,
@@ -17,9 +24,23 @@ class Player {
       width: 64,
       height: 80,
     };
+    this.velocity = {
+      x: 0,
+      y: 1,
+    };
   }
 
-  PlayerMove() {
+  draw() {
+    this.drawImage(
+      playerSprite,
+      player.position.x,
+      player.position.y,
+      player.size.width,
+      player.size.height
+    );
+  }
+
+  dlayerMove() {
     console.log("move");
   }
 }
@@ -31,13 +52,7 @@ function main() {
 
 function AnimateSprite() {
   ctx.clearRect(0, 0, canvas.width, canvas.height);
-  ctx.drawImage(
-    playerSprite,
-    player.position.x,
-    player.position.y,
-    player.size.width,
-    player.size.height
-  );
+  player.draw();
   requestAnimationFrame(() => this.AnimateSprite());
 }
 
