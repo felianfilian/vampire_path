@@ -59,4 +59,5 @@ function AnimateSprite() {
   requestAnimationFrame(AnimateSprite);
 }
 
-main();
+window.onload = main();
+//main();
