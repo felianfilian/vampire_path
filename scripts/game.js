@@ -59,5 +59,24 @@ function AnimateSprite() {
   requestAnimationFrame(AnimateSprite);
 }
 
+addEventListener("keydown", ({ keyCode }) => {
+  switch (keyCode) {
+    case 87: // up
+      jump();
+      break;
+    case 65: // left
+      keys.left.pressed = true;
+      break;
+    case 83: // down
+      break;
+    case 68: // right
+      keys.right.pressed = true;
+      break;
+    case 32: // space
+      jump();
+      break;
+  }
+});
+
 window.onload = main();
 //main();
