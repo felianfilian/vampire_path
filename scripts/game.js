@@ -2,8 +2,14 @@ const canvas = document.getElementById("main-canvas");
 const ctx = canvas.getContext("2d");
 
 const playerSprite = new Image();
-const playerIdlePath = "assets/vampire-lady/Idle1.png";
-playerSprite.src = playerIdlePath;
+//const playerIdlePath = "assets/vampire-lady/Idle1.png";
+const playerIdlePath = [
+  "assets/vampire-lady/Idle1.png",
+  "assets/vampire-lady/Idle2.png",
+  "assets/vampire-lady/Idle3.png",
+  "assets/vampire-lady/Idle4.png",
+];
+playerSprite.src = playerIdlePath[0];
 
 let player;
 
@@ -32,6 +38,7 @@ class Player extends Drawable {
   }
 
   draw() {
+    playerSprite.src = playerIdlePath[1];
     this.drawImage(
       playerSprite,
       this.position.x,
