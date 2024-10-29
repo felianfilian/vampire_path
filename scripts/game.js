@@ -35,6 +35,9 @@ class Player extends Drawable {
       x: 0,
       y: 1,
     };
+    this.frameIndex = 0;
+    this.frameRate = 10;
+    this.frameCounter = 0;
   }
 
   draw() {
